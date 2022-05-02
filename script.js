@@ -150,3 +150,74 @@ function validateUrl() {
     }
 }
 
+function validURL(str) {
+    let pattern = new RegExp(
+        /(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g
+    );
+    return !!pattern.test(str);    
+}
+
+function enableButton() {
+    if (featuresSelected == 3 && url === "valid URL") {
+        document.getElementById("reference-image-button").disabled = false;
+        refImageButton.classList.add("enable");
+    } else {
+        document.getElementById("reference-image-button").disabled = true;
+        refImageButton.classList.remove("enable");
+    }
+    validateUrl();
+}
+
+function purchase() {
+    image = refImageInput.value;
+    orderPost();
+}
+
+function purchaseFromLastOrders(element) {
+    const buyingDecision = prompt(`Você deseja fazer o pedido desta peça? (Sim/Não)`);
+    const buyingDecisionLowerCase = buyingDecision.toLocaleLowerCase();
+    const elementId = element.id;
+    model = document.querySelector(`.model-${elementId}`).id;
+    neck = document.querySelector(`.neck-${elementId}`).id;
+    material = document.querySelector(`.material-${elementId}`).id;
+    image = document.querySelector(`.image-${elementId}`).id;
+    owner = document.querySelector(`.owner-${elementId}`).id;
+    author = document.querySelector(`.author-${elementId}`).id;
+    const orderPostObject = {
+        model: `${model}`,
+        neck: `${neck}`,
+        material: `${material}`,
+        image: `${image}`,
+        owner: `${owner}`,
+        author: `${author}`,
+    };
+    if (buyingDecisionLowerCase === "sim") {
+        const promise = axios.post("https://mock-api.driven.com.br/api/v4/shirts-api/shirts", orderPostObject);
+        promise.then(() => {
+            alert(`Encomenda confirmada! Obrigado por escolher a Fashion Driven"`);
+            getLastOrders();
+        });
+        promise.catch(() => {
+            alert(`Oops! Não conseguimos processar a sua encomenda :(`);
+        });
+    }
+}
+
+function orderPost() {
+    const orderPostObject = {
+        model: `${model}`,
+        neck: `${neck}`,
+        material: `${material}`,
+        image: `${image}`,
+        owner: `${owner}`,
+        author: `${author}`,
+    };
+    const promise = axios.post("https://mock-api.driven.com.br/api/v4/shirts-api/shirts", orderPostObject);
+    promise.then(() => {
+        alert(`Encomenda confirmada! Obrigado por escolher a Driven Fashion!`);
+        getLastOrders();
+    });
+    promise.catch(() => {
+        alert(`Oops! Não conseguimos processar sua encomenda :(`);
+    });
+}
