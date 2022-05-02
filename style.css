@@ -1,0 +1,244 @@
+* {
+    box-sizing: border-box;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    height: 89px;
+    left: 0px;
+    top: 0px;
+    background-color: #404eed;
+}
+
+header img {
+    max-width: 100%;
+    max-height: 100%;
+    margin-left: 80px;
+}
+
+aside {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 0px;
+    top: 89px;
+    width: 50vw;
+    height: 785px;
+    background-color: #404eed;
+}
+
+aside img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+main {
+    position: absolute;
+    left: 0px;
+    top: 89px;
+    bottom: 342px;
+    width: 50vw;
+    height: 785px;
+    background-color: #e5e5e5;
+}
+
+span {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    color: #232323;
+}
+
+footer {
+    position: absolute;
+    top: 874px;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+    height: 342px;
+    background-color: #f2f2f2;
+}
+
+.footer-title {
+    position: absolute;
+    left: 118.75px;
+    top: 31.5px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 28px;
+    text-align: center;
+    color: #232323;
+}
+
+.last-orders-container {
+    display: flex;
+    position: absolute;
+    overflow-x: scroll;
+    height: 236.5px;
+    top: 73.75px;
+    left: 118.75px;
+    right: 118.75px;
+}
+
+.last-order-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 201.6px;
+    height: 100%;
+    background-color: #ffffff;
+    border-radius: 10px;
+    margin-right: 16.5px;
+}
+
+.last-orders-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 180px;
+    width: 180px;
+}
+
+.last-orders-image img {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.last-orders-creator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    max-width: 195px;
+    max-height: 25px;
+}
+
+.last-orders-creator span {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 23px;  
+    color: #232323;
+}
+
+#creator {
+    font-weight: 400;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: absolute;
+    top: 5%;
+    left: 17.862%;
+    width: 64.275%;
+    height: 90%;
+}
+
+.options-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 130px;
+}
+
+.reference-image-container {
+    display: flex;
+    width: 100%;
+    height: 135px;
+}
+
+.feature-selection-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 160px;
+}
+
+.option-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.option-span {
+    text-align: center;
+}
+
+.round-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 100px;
+    min-height: 100px;
+    background-color: #f2f2f2;
+    border: 0.5px solid #c4c4c4;
+    border-radius: 50%;
+}
+
+.round-div img {
+    max-width: 80px;
+    max-height: 80px;
+}
+
+input {
+    position: absolute;
+    left: 0;
+    bottom: 54px;
+    width: 100%;
+    height: 40px;  
+    background: #f2f2f2;
+    border-radius: 10px;  
+    border: none;
+    outline: none;
+}
+
+input::placeholder {
+    position: absolute;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    left: 16px;
+    top: 30%;
+    color: #818181;
+}
+
+button {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+    text-align: center;
+    text-justify: center;
+    background: #c4c4c4;
+    border-radius: 10px;  
+    border: none;
+    outline: none;
+}
+
+.selected {
+    border: 3px solid #404eed;
+}
+
+.enable {
+    background-color: #404eed;
+}
+
+.hidden {
+    display: none;
+}  
